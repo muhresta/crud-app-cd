@@ -2,7 +2,7 @@ name: Repository Dispatch
 
 on:
     repository_dispatch:
-        types: [crud-app]
+        types: [new-image]
 jobs:
     build:
         runs-on: ubuntu-latest
@@ -13,7 +13,7 @@ jobs:
               id: imgupd
               uses: mikefarah/yq@master
               with:
-                cmd: yq eval '.spec.template.spec.containers[0].image = "${{ github.event.client_payload.image }}"' -i deployment.yaml
+                cmd: yq eval '.spec.template.spec.containers[0].image = "${{ github.event.client_payload.image }}"' -i crud-app/deployment.yaml
             
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
