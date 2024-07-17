@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/muhresta/crud-app-cd.git
     targetRevision: HEAD
-    path: ./crud-app
+    path: .
   destination:
     server: https://kubernetes.default.svc
     namespace: crud-app
