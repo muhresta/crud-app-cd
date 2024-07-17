@@ -16,9 +16,5 @@ spec:
         - name: crud-app
           image: muhresta/crud-app:latest
           imagePullPolicy: Always
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
           ports:
           - containerPort: 3000
